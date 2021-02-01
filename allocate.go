@@ -238,6 +238,7 @@ func (a *ExecAllocator) Allocate(ctx context.Context, opts ...BrowserOption) (*B
 		return nil, err
 	}
 
+	wsURL = forceIP(wsURL)
 	browser, err := NewBrowser(ctx, wsURL, opts...)
 	if err != nil {
 		return nil, err
